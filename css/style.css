@@ -1,20 +1,26 @@
 :root {
+
+    /* DESIGN SYSTEM COLOR PALETTE */
     --c-primary: #FCA311;
     --c-primary-l: #F1C47B;
     --c-secondary: #14213D;
     --c-tertiary: #FFFAF6;
     --c-black: #0A111F;
 
+    /* DESIGN SYSTEM FONTS */
     --c-font-primary: 'Exo', sans-serif;
     --c-font-secondary: 'Turret Road', cursive;
     
 }
+
+/* MAIN TWEAKS */
 
 body {
     background: var(--c-secondary);
     font-family: var(--c-font-primary);
 }
 
+/* NAV BAR */
 .navbar {
     box-shadow: 0 2px 20px 0 var(--c-black);
     backdrop-filter: blur( 5px );
@@ -29,9 +35,11 @@ body {
     color: var(--c-primary-l);
     font-size: 1rem;
 }
+
 .navbar-dark .navbar-nav .nav-link:hover {
     color: var(--c-tertiary);
 }
+
 .navbar-brand {
     font-family: var(--c-font-secondary);
     font-size: 1.5rem;
@@ -39,10 +47,10 @@ body {
     color: var(--c-tertiary);
 }
 
-
 .btn-primary{
     font-family: var(--c-font-secondary);
 }
+
 
 /* **************** */
 /* *     HOME     * */
@@ -58,12 +66,14 @@ body {
     height: 15rem;
     align-items: center;
 }
+
 .c-dream-t {
     font-weight: bold;
     color: var(--c-secondary);
     mix-blend-mode:soft-light;
 }
 
+/* READY TO DREAM CANVAS EFFECT (USING JS) */
 .canvas-container {
     position: absolute;
     inset: 0;
@@ -75,6 +85,7 @@ canvas {
     height: 100%;
 }
 
+/* CAROUSEL ANIM */
 .carousel-inner .carousel-item > img {
     object-fit: cover;
     animation: zoomin 20s ease-in-out infinite;
@@ -91,24 +102,28 @@ canvas {
         transform: scale(1);
 
     }
-    
 }
 
-
-
-/* ACCORDIONS CUSTOMIZATION */
-.accordion-header{
+/* HOME ACCORDIONS CUSTOMIZATION */
+.accordion-header {
     font-family: var(--c-font-secondary);
 }
 
-
-.gradient-background{
-    background:
-        linear-gradient(red, transparent),
-        linear-gradient(to top left, lime, transparent),
-        linear-gradient(to top right, blue, transparent);
-    background-blend-mode: screen;
+.accordion-button {
+    background-color: var(--c-secondaryk)!important;
+    color: var(--c-primary)!important;
 }
+
+.accordion-item {
+    border-color: var(--c-primary-l);
+}
+
+.accordion-body {
+    background-color: var(--c-black)!important;
+    color: var(--c-tertiary)!important; 
+    
+}
+
 
 /* **************** */
 /* *  ABOUT PAGE  * */
@@ -123,6 +138,7 @@ canvas {
     
 }
 
+/* SOFT ZOOM EFFECT FOR IMAGES */
 .interactable {
     overflow: hidden;
     background-color: #0A111F;
@@ -138,7 +154,6 @@ canvas {
     filter: brightness(140%);
 }
 
-
 .c-about-s2 {
     height: 15rem;
     align-items: center;
@@ -146,17 +161,27 @@ canvas {
     overflow: hidden;
 }
 
+.gradient-background{
+    background:
+        linear-gradient(red, transparent),
+        linear-gradient(to top left, lime, transparent),
+        linear-gradient(to top right, blue, transparent);
+    background-blend-mode: screen;
+}
+
+/* ALTERNATIVE TITLE EFFECT */
 .video-bg {
     position:absolute; 
     min-width:100%;
     min-height:100%;
     mix-blend-mode:luminosity;
 }
+
+/* FIXED BACKGROUND PARAGRAPH */
 .c-about-s4 {
     background-image: url("../images/about-4.png");
     background-size: cover;
     background-attachment: fixed;
-    background-color: #14213D;
 }
 
 
@@ -167,6 +192,7 @@ footer{
     background-color: var(--c-secondary);
     padding: 1rem;
 }
+
 footer h5 {
     font-family: var(--c-font-secondary);
     font-size: 1.2rem;
@@ -177,12 +203,15 @@ footer h5 {
 .c-footer-links {
     color: var(--c-primary-l);
 }
+
 .c-footer-links:hover, .btn-floating i:hover {
     color: var(--c-tertiary);
 }
+
 .btn-floating i {
     color: var(--c-primary-l);
 }
+
 
 
 
@@ -197,11 +226,13 @@ footer h5 {
     border-radius: 1.25rem;
     transition: all 0.4s ease-in-out;
 }
+
 .btn-primary:hover {
     background-color: var(--c-tertiary);
     color: var(--c-black);
     letter-spacing: 3px;
 }
+
 .btn-primary:active {
     background-color: var(--c-secondary)!important;
 }
@@ -209,16 +240,18 @@ footer h5 {
 
 /* MAGIC BUTTON ;-) */
 .glow-effect {
+    /* CUSTOMIZE BUTTON EFFECT HERE */
     --glow-line-color: var(--c-tertiary);
     --glow-line-thickness: 2px;
     --glow-blur-color: var(--c-tertiary);
     --glow-blur-size: 6px;
     --animation-speed: 1700ms;
+
     /* do not changesize meant for calculations */
     --c-offset: 60px;
     position: relative;
-
 }
+
 .glow-container {
     pointer-events: none;
     position: absolute;
@@ -250,7 +283,6 @@ footer h5 {
     stroke-width: var(--glow-blur-size);
 }
 
-
 .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
     stroke-dashoffset: -200px;
     transition: stroke-dashoffset var(--animation-speed);
@@ -264,19 +296,4 @@ footer h5 {
     0%, 100% { opacity: 0 }
     25%, 75% { opacity: 0.5 }
     50% { opacity: 1 }
-}
-
-
-/* ACCORDION */
-.accordion-button {
-    background-color: var(--c-secondaryk)!important;
-    color: var(--c-primary)!important;
-}
-.accordion-item {
-    border-color: var(--c-primary-l);
-}
-.accordion-body {
-    background-color: var(--c-black)!important;
-    color: var(--c-tertiary)!important; 
-    
 }
