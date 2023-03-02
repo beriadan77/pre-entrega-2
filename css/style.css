@@ -300,7 +300,7 @@ canvas {
 
     
 }
-.blog.image img {
+.blog-image img {
     width: clamp(100px, 100%, 1200px);
     background-size: cover;
     background-attachment: fixed;
